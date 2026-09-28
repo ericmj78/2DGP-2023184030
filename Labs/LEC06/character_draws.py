@@ -16,14 +16,14 @@ def draw_character(x,y):
 
 def move_circle():
     print("CIRCLE")
-    clear_canvas()
-    character.draw(400,300)
-    update_canvas()
-    pass
+    
+    for degree in range(360):
+        pass
+        
 
     
 def move_rectangle():
-    print("RE,CTANGLE")
+    print("RECTANGLE")
     pass
 
 def move_triangle():
