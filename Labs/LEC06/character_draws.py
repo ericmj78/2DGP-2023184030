@@ -40,7 +40,7 @@ def move_bottom():
 
 def move_left():
     for y in range(50,551,5):
-        pass
+        draw_character(50,y)
         
 def move_rectangle():
     print("RECTANGLE")
