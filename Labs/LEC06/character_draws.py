@@ -39,8 +39,9 @@ def move_bottom():
         draw_character(x,50)
 
 def move_left():
-    pass
-    
+    for y in range(50,551,5):
+        pass
+        
 def move_rectangle():
     print("RECTANGLE")
     pass
