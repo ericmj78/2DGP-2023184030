@@ -13,7 +13,6 @@ def draw_character(x,y):
     delay(0.01)
 
 
-
 def move_circle():
     print("CIRCLE")
     
