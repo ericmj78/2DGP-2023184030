@@ -56,24 +56,25 @@ def move_rectangle():
 def move_triangle():
     print("TRIANGLE")
 
-    # 아래쪽 변 이동 
-    for x in range(50,701,5):
-        draw_character(x,100)
+    # 아래쪽 변: (100, 100)에서 (700, 100)으로 이동
+    for x in range(100, 701, 5):
+        draw_character(x, 100)
 
-    # 오른쪽 변 이동
-        count = 100
-        for step in range(count + 1):
-            t = step / count
-            x = 700 + (400 - 700) * t
-            y = 100 + (500 - 100) * t
-            draw_character(x,y)
+    count = 100
 
-        for step in range(count + 1):
-            t = step /count
+    # 오른쪽 변: (700, 100)에서 (400, 500)으로 이동
+    for step in range(count + 1):
+        t = step / count
+        x = 700 + (400 - 700) * t
+        y = 100 + (500 - 100) * t
+        draw_character(x, y)
 
-            x = 400 + (100 - 400) * t
-            y = 500 + (100 - 500) * t
-            draw_character(x, y)
+    # 왼쪽 변: (400, 500)에서 (100, 100)으로 이동
+    for step in range(count + 1):
+        t = step / count
+        x = 400 + (100 - 400) * t
+        y = 500 + (100 - 500) * t
+        draw_character(x, y)
 
 
 
@@ -83,7 +84,6 @@ while True:
     move_circle()
     move_rectangle()
     move_triangle()
-    pass
 
 
-cloase_canvas()
+close_canvas()
