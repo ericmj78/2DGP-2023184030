@@ -69,6 +69,7 @@ def move_triangle():
             draw_character(x,y)
 
         for step in range(count + 1):
+            t = step /count
             pass
 
 
