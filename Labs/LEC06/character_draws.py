@@ -58,7 +58,7 @@ def move_triangle():
 
     # 아래쪽 변 이동 
     for x in range(50,701,5):
-        pass
+        draw_character(x,100)
 
 
 
