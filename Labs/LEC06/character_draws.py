@@ -55,7 +55,14 @@ def move_rectangle():
 
 def move_triangle():
     print("TRIANGLE")
-    pass
+
+    # 아래쪽 변 이동 
+    for x in range(50,701,5):
+        pass
+
+
+
+
 
 while True:
     move_circle()
