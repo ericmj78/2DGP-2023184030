@@ -68,6 +68,9 @@ def move_triangle():
             y = 100 + (500 - 100) * t
             draw_character(x,y)
 
+        for step in range(count + 1):
+            pass
+
 
 
 
