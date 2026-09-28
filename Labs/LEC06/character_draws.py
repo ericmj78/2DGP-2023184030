@@ -23,6 +23,10 @@ def move_circle():
         y = 300 + 200*math.sin(radian)
         draw_character(x,y)
 
+
+def move_top():
+    pass
+
     
 def move_rectangle():
     print("RECTANGLE")
