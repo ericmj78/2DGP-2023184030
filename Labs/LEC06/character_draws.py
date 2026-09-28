@@ -64,6 +64,8 @@ def move_triangle():
         count = 100
         for step in range(count + 1):
             t = step / count
+            x = 700 + (400 - 700) * t
+            y = 100 + (500 - 100) * t
             pass
 
 
