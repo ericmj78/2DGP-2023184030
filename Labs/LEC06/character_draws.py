@@ -66,7 +66,7 @@ def move_triangle():
             t = step / count
             x = 700 + (400 - 700) * t
             y = 100 + (500 - 100) * t
-            pass
+            draw_character(x,y)
 
 
 
