@@ -73,7 +73,7 @@ def move_triangle():
 
             x = 400 + (100 - 400) * t
             y = 500 + (100 - 500) * t
-            pass
+            draw_character(x, y)
 
 
 
