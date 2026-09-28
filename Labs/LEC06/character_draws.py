@@ -28,6 +28,9 @@ def move_top():
     for x in range(50,751,5):
         draw_character(x,550)
 
+
+def move_right():
+    pass
     
 def move_rectangle():
     print("RECTANGLE")
