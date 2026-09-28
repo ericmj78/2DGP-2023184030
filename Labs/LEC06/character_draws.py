@@ -35,7 +35,8 @@ def move_right():
 
 
 def move_bottom():
-    pass
+    for x in range(750,49,-5):
+        pass
     
 def move_rectangle():
     print("RECTANGLE")
