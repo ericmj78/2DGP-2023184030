@@ -18,6 +18,7 @@ def move_circle():
     print("CIRCLE")
     
     for degree in range(360):
+        radian = math.radians(degree)
         pass
         
 
