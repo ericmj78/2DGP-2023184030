@@ -8,7 +8,10 @@ character = load_image('character.png')
 
 def draw_character(x,y):
     clear_canvas()
-    
+    character.draw(x,y)
+
+
+
 def move_circle():
     print("CIRCLE")
     clear_canvas()
