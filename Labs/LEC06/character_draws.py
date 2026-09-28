@@ -31,7 +31,7 @@ def move_top():
 
 def move_right():
     for y in range(550,49,-5):
-        pass
+        draw_character(750,y)
     
 def move_rectangle():
     print("RECTANGLE")
