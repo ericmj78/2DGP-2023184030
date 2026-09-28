@@ -41,10 +41,17 @@ def move_bottom():
 def move_left():
     for y in range(50,551,5):
         draw_character(50,y)
+
         
 def move_rectangle():
     print("RECTANGLE")
-    pass
+
+    move_top()
+    move_right()
+    move_bottom()
+    move_left()
+
+
 
 def move_triangle():
     print("TRIANGLE")
