@@ -62,6 +62,8 @@ def move_triangle():
 
     # 오른쪽 변 이동
         count = 100
+        for step in range(count + 1):
+            pass
 
 
 
