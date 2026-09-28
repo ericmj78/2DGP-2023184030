@@ -60,6 +60,9 @@ def move_triangle():
     for x in range(50,701,5):
         draw_character(x,100)
 
+    # 오른쪽 변 이동
+        count = 100
+
 
 
 
