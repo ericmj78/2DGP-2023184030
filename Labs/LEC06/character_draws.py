@@ -25,7 +25,8 @@ def move_circle():
 
 
 def move_top():
-    pass
+    for x in range(50,751,5):
+        pass
 
     
 def move_rectangle():
