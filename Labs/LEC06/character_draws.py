@@ -21,8 +21,7 @@ def move_circle():
         radian = math.radians(degree)
         x = 400 + 200*math.cos(radian)
         y = 300 + 200*math.sin(radian)
-        pass
-        
+        draw_character(x,y)
 
     
 def move_rectangle():
