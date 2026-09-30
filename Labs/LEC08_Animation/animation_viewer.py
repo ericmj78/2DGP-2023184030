@@ -7,6 +7,7 @@ FRAME_WIDTH = 680
 FRAME_HEIGHT = 472
 COLUMNS = 8
 FRAMES_PER_SECOND = 12
+REPEAT_COUNT = 5
 ANIMATIONS = (
     ('Idle', 0, 10, (7, 31, 381, 425)),
     ('Walk', 2, 10, (0, 11, 377, 457)),
@@ -28,9 +29,10 @@ def draw_frame(sheet, animation, frame_index):
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 sheet = load_image(str(Path(__file__).resolve().with_name('freedino_spritesheet.png')))
 for animation in ANIMATIONS:
-    for frame_index in range(animation[2]):
-        clear_canvas()
-        draw_frame(sheet, animation, frame_index)
-        update_canvas()
-        delay(1 / FRAMES_PER_SECOND)
+    for repeat in range(REPEAT_COUNT):
+        for frame_index in range(animation[2]):
+            clear_canvas()
+            draw_frame(sheet, animation, frame_index)
+            update_canvas()
+            delay(1 / FRAMES_PER_SECOND)
 close_canvas()
