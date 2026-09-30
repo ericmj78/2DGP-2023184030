@@ -11,7 +11,7 @@ def draw_frame(sheet, frame):
     row = frame // COLUMNS
     source_left = column * FRAME_WIDTH
     source_bottom = sheet.h - (row + 1) * FRAME_HEIGHT
-    draw_x = CANVAS_WIDTH / 2
+    draw_x = CANVAS_WIDTH / 2 + FRAME_WIDTH / 2 - (7 + 381) / 2
     draw_y = CANVAS_HEIGHT / 2
     draw_width, draw_height = FRAME_WIDTH, FRAME_HEIGHT
     sheet.clip_draw(source_left, source_bottom, FRAME_WIDTH, FRAME_HEIGHT, draw_x, draw_y, draw_width, draw_height)
