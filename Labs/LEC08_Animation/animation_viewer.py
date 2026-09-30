@@ -29,12 +29,12 @@ def draw_frame(sheet, animation, frame_index):
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 sheet = load_image(str(Path(__file__).resolve().with_name('freedino_spritesheet.png')))
-for animation in ANIMATIONS:
-    for repeat in range(REPEAT_COUNT):
-        for frame_index in range(animation[2]):
-            clear_canvas()
-            draw_frame(sheet, animation, frame_index)
-            update_canvas()
-            delay(1 / FRAMES_PER_SECOND)
-    delay(PAUSE_SECONDS)
-close_canvas()
+while True:
+    for animation in ANIMATIONS:
+        for repeat in range(REPEAT_COUNT):
+            for frame_index in range(animation[2]):
+                clear_canvas()
+                draw_frame(sheet, animation, frame_index)
+                update_canvas()
+                delay(1 / FRAMES_PER_SECOND)
+        delay(PAUSE_SECONDS)
