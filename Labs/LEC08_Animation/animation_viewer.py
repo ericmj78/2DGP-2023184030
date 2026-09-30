@@ -29,10 +29,16 @@ def draw_frame(sheet, animation, frame_index):
 
 open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 sheet = load_image(str(Path(__file__).resolve().with_name('freedino_spritesheet.png')))
+running = True
 animation_index = 0
 elapsed = 0.0
 previous_time = get_time()
-while True:
+while running:
+    for event in get_events():
+        if event.type == SDL_QUIT:
+            running = False
+    if not running:
+        break
     now = get_time()
     elapsed += now - previous_time
     previous_time = now
@@ -52,3 +58,4 @@ while True:
     draw_frame(sheet, animation, frame_index)
     update_canvas()
     delay(0.01)
+close_canvas()
