@@ -1,7 +1,9 @@
 from pathlib import Path
 from pico2d import *
 
-open_canvas(800, 600)
+CANVAS_WIDTH = 800
+CANVAS_HEIGHT = 600
+open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 sheet = load_image(str(Path(__file__).resolve().with_name('freedino_spritesheet.png')))
 clear_canvas()
 sheet.clip_draw(0, sheet.h - 472, 680, 472, 400, 300, 680, 472)
