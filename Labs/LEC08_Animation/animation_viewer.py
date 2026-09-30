@@ -6,6 +6,7 @@ CANVAS_HEIGHT = 600
 FRAME_WIDTH = 680
 FRAME_HEIGHT = 472
 COLUMNS = 8
+FRAMES_PER_SECOND = 12
 ANIMATIONS = (
     ('Idle', 0, 10, (7, 31, 381, 425)),
     ('Walk', 2, 10, (0, 11, 377, 457)),
@@ -31,5 +32,5 @@ for animation in ANIMATIONS:
         clear_canvas()
         draw_frame(sheet, animation, frame_index)
         update_canvas()
-        delay(0.08)
+        delay(1 / FRAMES_PER_SECOND)
 close_canvas()
