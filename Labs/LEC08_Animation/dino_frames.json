@@ -1,0 +1,641 @@
+{
+  "source_sheet": "freedino_spritesheet.png",
+  "sprite_sheet": "dino_compact_sheet.png",
+  "original_frame_size": [
+    680,
+    472
+  ],
+  "animations": [
+    {
+      "name": "Idle",
+      "union_bbox": [
+        7,
+        31,
+        381,
+        425
+      ],
+      "frames": [
+        {
+          "left": 0,
+          "bottom": 1679,
+          "width": 369,
+          "height": 394,
+          "source_bbox": [
+            7,
+            31,
+            376,
+            425
+          ]
+        },
+        {
+          "left": 371,
+          "bottom": 1682,
+          "width": 369,
+          "height": 391,
+          "source_bbox": [
+            7,
+            34,
+            376,
+            425
+          ]
+        },
+        {
+          "left": 742,
+          "bottom": 1686,
+          "width": 368,
+          "height": 387,
+          "source_bbox": [
+            8,
+            38,
+            376,
+            425
+          ]
+        },
+        {
+          "left": 1112,
+          "bottom": 1689,
+          "width": 367,
+          "height": 384,
+          "source_bbox": [
+            9,
+            41,
+            376,
+            425
+          ]
+        },
+        {
+          "left": 1481,
+          "bottom": 1691,
+          "width": 368,
+          "height": 382,
+          "source_bbox": [
+            10,
+            43,
+            378,
+            425
+          ]
+        },
+        {
+          "left": 1851,
+          "bottom": 1692,
+          "width": 367,
+          "height": 381,
+          "source_bbox": [
+            12,
+            44,
+            379,
+            425
+          ]
+        },
+        {
+          "left": 2220,
+          "bottom": 1693,
+          "width": 367,
+          "height": 380,
+          "source_bbox": [
+            14,
+            45,
+            381,
+            425
+          ]
+        },
+        {
+          "left": 2589,
+          "bottom": 1690,
+          "width": 368,
+          "height": 383,
+          "source_bbox": [
+            12,
+            42,
+            380,
+            425
+          ]
+        },
+        {
+          "left": 2959,
+          "bottom": 1686,
+          "width": 368,
+          "height": 387,
+          "source_bbox": [
+            10,
+            38,
+            378,
+            425
+          ]
+        },
+        {
+          "left": 3329,
+          "bottom": 1683,
+          "width": 369,
+          "height": 390,
+          "source_bbox": [
+            8,
+            35,
+            377,
+            425
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Walk",
+      "union_bbox": [
+        0,
+        11,
+        377,
+        457
+      ],
+      "frames": [
+        {
+          "left": 3700,
+          "bottom": 1683,
+          "width": 376,
+          "height": 390,
+          "source_bbox": [
+            0,
+            35,
+            376,
+            425
+          ]
+        },
+        {
+          "left": 0,
+          "bottom": 1267,
+          "width": 359,
+          "height": 410,
+          "source_bbox": [
+            8,
+            23,
+            367,
+            433
+          ]
+        },
+        {
+          "left": 361,
+          "bottom": 1250,
+          "width": 358,
+          "height": 427,
+          "source_bbox": [
+            16,
+            11,
+            374,
+            438
+          ]
+        },
+        {
+          "left": 721,
+          "bottom": 1235,
+          "width": 360,
+          "height": 442,
+          "source_bbox": [
+            17,
+            11,
+            377,
+            453
+          ]
+        },
+        {
+          "left": 1083,
+          "bottom": 1243,
+          "width": 357,
+          "height": 434,
+          "source_bbox": [
+            10,
+            23,
+            367,
+            457
+          ]
+        },
+        {
+          "left": 1442,
+          "bottom": 1277,
+          "width": 373,
+          "height": 400,
+          "source_bbox": [
+            3,
+            35,
+            376,
+            435
+          ]
+        },
+        {
+          "left": 1817,
+          "bottom": 1273,
+          "width": 359,
+          "height": 404,
+          "source_bbox": [
+            9,
+            23,
+            368,
+            427
+          ]
+        },
+        {
+          "left": 2178,
+          "bottom": 1257,
+          "width": 343,
+          "height": 420,
+          "source_bbox": [
+            17,
+            12,
+            360,
+            432
+          ]
+        },
+        {
+          "left": 2523,
+          "bottom": 1245,
+          "width": 343,
+          "height": 432,
+          "source_bbox": [
+            16,
+            11,
+            359,
+            443
+          ]
+        },
+        {
+          "left": 2868,
+          "bottom": 1253,
+          "width": 359,
+          "height": 424,
+          "source_bbox": [
+            8,
+            23,
+            367,
+            447
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Run",
+      "union_bbox": [
+        9,
+        5,
+        451,
+        460
+      ],
+      "frames": [
+        {
+          "left": 3229,
+          "bottom": 1320,
+          "width": 422,
+          "height": 357,
+          "source_bbox": [
+            29,
+            68,
+            451,
+            425
+          ]
+        },
+        {
+          "left": 3653,
+          "bottom": 1274,
+          "width": 396,
+          "height": 403,
+          "source_bbox": [
+            45,
+            36,
+            441,
+            439
+          ]
+        },
+        {
+          "left": 0,
+          "bottom": 857,
+          "width": 423,
+          "height": 376,
+          "source_bbox": [
+            9,
+            5,
+            432,
+            381
+          ]
+        },
+        {
+          "left": 425,
+          "bottom": 816,
+          "width": 396,
+          "height": 417,
+          "source_bbox": [
+            45,
+            36,
+            441,
+            453
+          ]
+        },
+        {
+          "left": 823,
+          "bottom": 870,
+          "width": 419,
+          "height": 363,
+          "source_bbox": [
+            29,
+            69,
+            448,
+            432
+          ]
+        },
+        {
+          "left": 1244,
+          "bottom": 835,
+          "width": 394,
+          "height": 398,
+          "source_bbox": [
+            46,
+            35,
+            440,
+            433
+          ]
+        },
+        {
+          "left": 1640,
+          "bottom": 828,
+          "width": 388,
+          "height": 405,
+          "source_bbox": [
+            44,
+            8,
+            432,
+            413
+          ]
+        },
+        {
+          "left": 2030,
+          "bottom": 811,
+          "width": 397,
+          "height": 422,
+          "source_bbox": [
+            45,
+            38,
+            442,
+            460
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jump",
+      "union_bbox": [
+        7,
+        18,
+        453,
+        472
+      ],
+      "frames": [
+        {
+          "left": 2429,
+          "bottom": 839,
+          "width": 369,
+          "height": 394,
+          "source_bbox": [
+            7,
+            31,
+            376,
+            425
+          ]
+        },
+        {
+          "left": 2800,
+          "bottom": 896,
+          "width": 382,
+          "height": 337,
+          "source_bbox": [
+            71,
+            88,
+            453,
+            425
+          ]
+        },
+        {
+          "left": 3184,
+          "bottom": 900,
+          "width": 380,
+          "height": 333,
+          "source_bbox": [
+            73,
+            92,
+            453,
+            425
+          ]
+        },
+        {
+          "left": 3566,
+          "bottom": 852,
+          "width": 383,
+          "height": 381,
+          "source_bbox": [
+            67,
+            78,
+            450,
+            459
+          ]
+        },
+        {
+          "left": 0,
+          "bottom": 408,
+          "width": 413,
+          "height": 401,
+          "source_bbox": [
+            35,
+            20,
+            448,
+            421
+          ]
+        },
+        {
+          "left": 415,
+          "bottom": 412,
+          "width": 414,
+          "height": 397,
+          "source_bbox": [
+            34,
+            19,
+            448,
+            416
+          ]
+        },
+        {
+          "left": 831,
+          "bottom": 416,
+          "width": 414,
+          "height": 393,
+          "source_bbox": [
+            32,
+            18,
+            446,
+            411
+          ]
+        },
+        {
+          "left": 1247,
+          "bottom": 413,
+          "width": 414,
+          "height": 396,
+          "source_bbox": [
+            33,
+            19,
+            447,
+            415
+          ]
+        },
+        {
+          "left": 1663,
+          "bottom": 408,
+          "width": 412,
+          "height": 401,
+          "source_bbox": [
+            35,
+            20,
+            447,
+            421
+          ]
+        },
+        {
+          "left": 2077,
+          "bottom": 365,
+          "width": 402,
+          "height": 444,
+          "source_bbox": [
+            33,
+            28,
+            435,
+            472
+          ]
+        },
+        {
+          "left": 2481,
+          "bottom": 401,
+          "width": 405,
+          "height": 408,
+          "source_bbox": [
+            31,
+            45,
+            436,
+            453
+          ]
+        },
+        {
+          "left": 2888,
+          "bottom": 432,
+          "width": 401,
+          "height": 377,
+          "source_bbox": [
+            26,
+            52,
+            427,
+            429
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dead",
+      "union_bbox": [
+        33,
+        69,
+        665,
+        471
+      ],
+      "frames": [
+        {
+          "left": 3291,
+          "bottom": 453,
+          "width": 406,
+          "height": 356,
+          "source_bbox": [
+            33,
+            69,
+            439,
+            425
+          ]
+        },
+        {
+          "left": 0,
+          "bottom": 0,
+          "width": 420,
+          "height": 363,
+          "source_bbox": [
+            77,
+            108,
+            497,
+            471
+          ]
+        },
+        {
+          "left": 422,
+          "bottom": 48,
+          "width": 426,
+          "height": 315,
+          "source_bbox": [
+            120,
+            153,
+            546,
+            468
+          ]
+        },
+        {
+          "left": 850,
+          "bottom": 119,
+          "width": 491,
+          "height": 244,
+          "source_bbox": [
+            123,
+            194,
+            614,
+            438
+          ]
+        },
+        {
+          "left": 1343,
+          "bottom": 141,
+          "width": 561,
+          "height": 222,
+          "source_bbox": [
+            104,
+            212,
+            665,
+            434
+          ]
+        },
+        {
+          "left": 1906,
+          "bottom": 159,
+          "width": 552,
+          "height": 204,
+          "source_bbox": [
+            109,
+            234,
+            661,
+            438
+          ]
+        },
+        {
+          "left": 2460,
+          "bottom": 159,
+          "width": 552,
+          "height": 204,
+          "source_bbox": [
+            109,
+            234,
+            661,
+            438
+          ]
+        },
+        {
+          "left": 3014,
+          "bottom": 159,
+          "width": 552,
+          "height": 204,
+          "source_bbox": [
+            109,
+            234,
+            661,
+            438
+          ]
+        }
+      ]
+    }
+  ]
+}
