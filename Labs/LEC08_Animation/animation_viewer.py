@@ -8,6 +8,7 @@ FRAME_HEIGHT = 472
 COLUMNS = 8
 ANIMATIONS = (
     ('Idle', 0, 10),
+    ('Walk', 2, 10),
 )
 
 def draw_frame(sheet, animation, frame_index):
