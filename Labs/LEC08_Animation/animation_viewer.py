@@ -7,15 +7,15 @@ FRAME_WIDTH = 680
 FRAME_HEIGHT = 472
 COLUMNS = 8
 ANIMATIONS = (
-    ('Idle', 0, 10),
-    ('Walk', 2, 10),
-    ('Run', 4, 8),
-    ('Jump', 5, 12),
-    ('Dead', 7, 8),
+    ('Idle', 0, 10, (7, 31, 381, 425)),
+    ('Walk', 2, 10, (0, 11, 377, 457)),
+    ('Run', 4, 8, (9, 5, 451, 460)),
+    ('Jump', 5, 12, (7, 18, 453, 472)),
+    ('Dead', 7, 8, (33, 69, 665, 471)),
 )
 
 def draw_frame(sheet, animation, frame_index):
-    left, top, right, bottom = (7, 31, 381, 425)
+    left, top, right, bottom = animation[3]
     scale = max(420 / (right - left), 310 / (bottom - top))
     row = animation[1] + frame_index // COLUMNS
     column = frame_index % COLUMNS
