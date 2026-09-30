@@ -10,6 +10,7 @@ ANIMATIONS = (
     ('Idle', 0, 10),
     ('Walk', 2, 10),
     ('Run', 4, 8),
+    ('Jump', 5, 12),
 )
 
 def draw_frame(sheet, animation, frame_index):
