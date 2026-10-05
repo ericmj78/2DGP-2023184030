@@ -54,7 +54,7 @@ ANIMATIONS = (
         Frame(270, 448, 24, 32),
         Frame(302, 448, 29, 26),
     )),
-    Animation('시트 2행', 407, 10, (
+    Animation('시트 2행', 407, 12, (
         Frame(8, 408, 26, 37),
         Frame(37, 408, 27, 37),
         Frame(65, 407, 31, 38),
@@ -76,7 +76,7 @@ ANIMATIONS = (
         Frame(181, 362, 34, 41),
         Frame(228, 363, 33, 40),
     )),
-    Animation('시트 4행', 325, 10, (
+    Animation('시트 4행', 325, 12, (
         Frame(1, 326, 29, 30),
         Frame(35, 327, 29, 31),
         Frame(67, 327, 30, 29),
@@ -87,7 +87,7 @@ ANIMATIONS = (
         Frame(230, 326, 31, 29),
         Frame(268, 325, 30, 30),
     )),
-    Animation('시트 5행', 292, 10, (
+    Animation('시트 5행', 292, 12, (
         Frame(1, 292, 30, 27),
         Frame(36, 292, 29, 27),
         Frame(70, 292, 29, 27),
@@ -149,7 +149,7 @@ class Playback:
 
     def update(self, dt: float) -> None:
         self.elapsed += max(0.0, dt)
-        frame_interval = 1 / 10
+        frame_interval = 1 / ANIMATIONS[self.action_index].fps
         frame_count = len(ANIMATIONS[self.action_index].frames)
         while self.elapsed >= frame_interval:
             self.elapsed -= frame_interval
@@ -188,6 +188,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
