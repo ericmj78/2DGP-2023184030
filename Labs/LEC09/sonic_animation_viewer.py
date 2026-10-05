@@ -32,6 +32,7 @@ def main():
                 ):
                     running = False
             clear_canvas()
+            sheet.clip_draw(1, 447, 29, 39, CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2)
             update_canvas()
             delay(1 / 60)
     finally:
@@ -40,4 +41,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
