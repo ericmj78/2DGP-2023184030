@@ -43,6 +43,7 @@ class Animation:
     frames: tuple[Frame, ...]
 
 
+# Sonic 동작은 원본 시트의 윗행부터, 각 행에서는 왼쪽부터 재생한다.
 ANIMATIONS = (
     Animation('시트 1행', 447, 10, (
         Frame(1, 447, 29, 39),
@@ -140,7 +141,6 @@ ANIMATIONS = (
         Frame(96, 59, 23, 39),
         Frame(125, 59, 23, 39),
     )),
-    # 다음 시트 행의 애니메이션을 여기에 추가한다.
 )
 
 
@@ -193,6 +193,8 @@ def main():
                     event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE
                 ):
                     running = False
+            if not running:
+                break
             now = get_time()
             player.update(now - last_time)
             last_time = now
@@ -217,21 +219,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
