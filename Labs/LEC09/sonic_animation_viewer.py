@@ -11,6 +11,7 @@ from pico2d import (
     close_canvas,
     delay,
     get_events,
+    get_time,
     load_image,
     open_canvas,
     update_canvas,
@@ -140,13 +141,27 @@ ANIMATIONS = (
 )
 
 
+@dataclass
+class Playback:
+    action_index: int = 0
+    frame_index: int = 0
+    elapsed: float = 0.0
+
+    def update(self, dt: float) -> None:
+        self.elapsed += max(0.0, dt)
+        frame_interval = 1 / 10
+        frame_count = len(ANIMATIONS[self.action_index].frames)
+        while self.elapsed >= frame_interval:
+            self.elapsed -= frame_interval
+            self.frame_index = (self.frame_index + 1) % frame_count
+
 def main():
     open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
     try:
         sheet_path = Path(__file__).resolve().parent / 'sonic-sprite.png'
         sheet = load_image(str(sheet_path))
-        animation = ANIMATIONS[0]
-        frame = animation.frames[0]
+        player = Playback()
+        last_time = get_time()
         running = True
         while running:
             for event in get_events():
@@ -154,6 +169,11 @@ def main():
                     event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE
                 ):
                     running = False
+            now = get_time()
+            player.update(now - last_time)
+            last_time = now
+            animation = ANIMATIONS[player.action_index]
+            frame = animation.frames[player.frame_index]
             clear_canvas()
             sheet.clip_draw(
                 frame.left, frame.bottom, frame.width, frame.height,
@@ -168,6 +188,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
