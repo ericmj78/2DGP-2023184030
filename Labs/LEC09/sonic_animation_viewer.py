@@ -20,6 +20,7 @@ from pico2d import (
 CANVAS_WIDTH = 1200
 CANVAS_HEIGHT = 600
 SPRITE_SCALE = 8
+REPEATS_PER_ACTION = 5
 
 
 @dataclass(frozen=True)
@@ -145,15 +146,24 @@ ANIMATIONS = (
 class Playback:
     action_index: int = 0
     frame_index: int = 0
+    completed_repeats: int = 0
+    finished: bool = False
     elapsed: float = 0.0
 
     def update(self, dt: float) -> None:
         self.elapsed += max(0.0, dt)
         frame_interval = 1 / ANIMATIONS[self.action_index].fps
         frame_count = len(ANIMATIONS[self.action_index].frames)
-        while self.elapsed >= frame_interval:
+        while self.elapsed >= frame_interval and not self.finished:
             self.elapsed -= frame_interval
-            self.frame_index = (self.frame_index + 1) % frame_count
+            if self.frame_index + 1 < frame_count:
+                self.frame_index += 1
+            else:
+                self.completed_repeats += 1
+                if self.completed_repeats == REPEATS_PER_ACTION:
+                    self.finished = True
+                else:
+                    self.frame_index = 0
 
 def main():
     open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
@@ -188,6 +198,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
