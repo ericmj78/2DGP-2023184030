@@ -20,6 +20,7 @@ from pico2d import (
 CANVAS_WIDTH = 1200
 CANVAS_HEIGHT = 600
 SPRITE_SCALE = 8
+GROUND_Y = 140
 REPEATS_PER_ACTION = 5
 HOLD_SECONDS = 1.0
 
@@ -194,9 +195,14 @@ def main():
             animation = ANIMATIONS[player.action_index]
             frame = animation.frames[player.frame_index]
             clear_canvas()
+            draw_x = CANVAS_WIDTH // 2 + frame.offset_x * SPRITE_SCALE
+            draw_y = GROUND_Y + (
+                frame.bottom - animation.baseline_bottom
+                + frame.height / 2 + frame.offset_y
+            ) * SPRITE_SCALE
             sheet.clip_draw(
                 frame.left, frame.bottom, frame.width, frame.height,
-                CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2,
+                draw_x, draw_y,
                 frame.width * SPRITE_SCALE, frame.height * SPRITE_SCALE,
             )
             update_canvas()
@@ -207,6 +213,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
