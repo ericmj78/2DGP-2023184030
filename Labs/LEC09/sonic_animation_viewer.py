@@ -1,5 +1,6 @@
 """LEC09 Sonic 스프라이트 시트 애니메이션 뷰어."""
 
+from dataclasses import dataclass
 from pathlib import Path
 
 from pico2d import (
@@ -20,11 +21,37 @@ CANVAS_HEIGHT = 600
 SPRITE_SCALE = 8
 
 
+@dataclass(frozen=True)
+class Frame:
+    left: int
+    bottom: int
+    width: int
+    height: int
+    offset_x: int = 0
+    offset_y: int = 0
+
+
+@dataclass(frozen=True)
+class Animation:
+    name: str
+    baseline_bottom: int
+    fps: float
+    frames: tuple[Frame, ...]
+
+
+ANIMATIONS = (
+    Animation('시트 1행', 447, 10, (Frame(1, 447, 29, 39),)),
+    # 다음 시트 행의 애니메이션을 여기에 추가한다.
+)
+
+
 def main():
     open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
     try:
         sheet_path = Path(__file__).resolve().parent / 'sonic-sprite.png'
         sheet = load_image(str(sheet_path))
+        animation = ANIMATIONS[0]
+        frame = animation.frames[0]
         running = True
         while running:
             for event in get_events():
@@ -33,15 +60,16 @@ def main():
                 ):
                     running = False
             clear_canvas()
-            sheet.clip_draw(1, 447, 29, 39, CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2, 29 * SPRITE_SCALE, 39 * SPRITE_SCALE)
+            sheet.clip_draw(
+                frame.left, frame.bottom, frame.width, frame.height,
+                CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2,
+                frame.width * SPRITE_SCALE, frame.height * SPRITE_SCALE,
+            )
             update_canvas()
             delay(1 / 60)
     finally:
         close_canvas()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
-
-
-
