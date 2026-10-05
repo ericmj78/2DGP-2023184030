@@ -21,6 +21,7 @@ CANVAS_WIDTH = 1200
 CANVAS_HEIGHT = 600
 SPRITE_SCALE = 8
 REPEATS_PER_ACTION = 5
+HOLD_SECONDS = 1.0
 
 
 @dataclass(frozen=True)
@@ -147,21 +148,28 @@ class Playback:
     action_index: int = 0
     frame_index: int = 0
     completed_repeats: int = 0
-    finished: bool = False
+    holding: bool = False
     elapsed: float = 0.0
 
     def update(self, dt: float) -> None:
         self.elapsed += max(0.0, dt)
+        if self.holding:
+            if self.elapsed < HOLD_SECONDS:
+                return
+            self.elapsed -= HOLD_SECONDS
+            self.frame_index = 0
+            self.completed_repeats = 0
+            self.holding = False
         frame_interval = 1 / ANIMATIONS[self.action_index].fps
         frame_count = len(ANIMATIONS[self.action_index].frames)
-        while self.elapsed >= frame_interval and not self.finished:
+        while self.elapsed >= frame_interval and not self.holding:
             self.elapsed -= frame_interval
             if self.frame_index + 1 < frame_count:
                 self.frame_index += 1
             else:
                 self.completed_repeats += 1
                 if self.completed_repeats == REPEATS_PER_ACTION:
-                    self.finished = True
+                    self.holding = True
                 else:
                     self.frame_index = 0
 
@@ -198,6 +206,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
