@@ -154,19 +154,23 @@ class Playback:
 
     def update(self, dt: float) -> None:
         self.elapsed += max(0.0, dt)
-        if self.holding:
-            if self.elapsed < HOLD_SECONDS:
-                return
-            self.elapsed -= HOLD_SECONDS
-            self.action_index = (self.action_index + 1) % len(ANIMATIONS)
-            self.frame_index = 0
-            self.completed_repeats = 0
-            self.holding = False
-        frame_interval = 1 / ANIMATIONS[self.action_index].fps
-        frame_count = len(ANIMATIONS[self.action_index].frames)
-        while self.elapsed >= frame_interval and not self.holding:
+        while True:
+            if self.holding:
+                if self.elapsed < HOLD_SECONDS:
+                    break
+                self.elapsed -= HOLD_SECONDS
+                self.action_index = (self.action_index + 1) % len(ANIMATIONS)
+                self.frame_index = 0
+                self.completed_repeats = 0
+                self.holding = False
+                continue
+
+            animation = ANIMATIONS[self.action_index]
+            frame_interval = 1 / animation.fps
+            if self.elapsed < frame_interval:
+                break
             self.elapsed -= frame_interval
-            if self.frame_index + 1 < frame_count:
+            if self.frame_index + 1 < len(animation.frames):
                 self.frame_index += 1
             else:
                 self.completed_repeats += 1
@@ -213,6 +217,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
