@@ -1,5 +1,7 @@
 """LEC09 Sonic 스프라이트 시트 애니메이션 뷰어."""
 
+from pathlib import Path
+
 from pico2d import (
     SDL_KEYDOWN,
     SDL_QUIT,
@@ -8,6 +10,7 @@ from pico2d import (
     close_canvas,
     delay,
     get_events,
+    load_image,
     open_canvas,
     update_canvas,
 )
@@ -19,6 +22,8 @@ CANVAS_HEIGHT = 600
 def main():
     open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
     try:
+        sheet_path = Path(__file__).resolve().parent / 'sonic-sprite.png'
+        sheet = load_image(str(sheet_path))
         running = True
         while running:
             for event in get_events():
@@ -35,3 +40,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
