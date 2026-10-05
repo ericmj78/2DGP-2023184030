@@ -157,6 +157,7 @@ class Playback:
             if self.elapsed < HOLD_SECONDS:
                 return
             self.elapsed -= HOLD_SECONDS
+            self.action_index = (self.action_index + 1) % len(ANIMATIONS)
             self.frame_index = 0
             self.completed_repeats = 0
             self.holding = False
@@ -206,6 +207,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
