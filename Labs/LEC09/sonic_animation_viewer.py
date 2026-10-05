@@ -17,6 +17,7 @@ from pico2d import (
 
 CANVAS_WIDTH = 1200
 CANVAS_HEIGHT = 600
+SPRITE_SCALE = 8
 
 
 def main():
@@ -32,7 +33,7 @@ def main():
                 ):
                     running = False
             clear_canvas()
-            sheet.clip_draw(1, 447, 29, 39, CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2)
+            sheet.clip_draw(1, 447, 29, 39, CANVAS_WIDTH // 2, CANVAS_HEIGHT // 2, 29 * SPRITE_SCALE, 39 * SPRITE_SCALE)
             update_canvas()
             delay(1 / 60)
     finally:
@@ -41,5 +42,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
